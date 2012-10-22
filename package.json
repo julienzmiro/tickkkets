@@ -1,0 +1,15 @@
+{
+  "name": "tickkkets",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.5",
+    "jade": ">= 0.0.1",
+    "twitter-text": "1.5.0",
+    "zlib": ">= 0.0.1",
+    "mongodb": "0.9.6-9"
+  },
+  "engines": {
+    "node": "0.6.5"
+  }
+}

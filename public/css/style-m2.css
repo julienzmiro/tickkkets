@@ -1,0 +1,17 @@
+/*
+java -jar /usr/local/yuicompressor/build/yuicompressor-2.4.7.jar /Users/julienzmiro/Sites/tickkkets/tickkkets.com/public/css/style-m2.css -o /Users/julienzmiro/Sites/tickkkets/tickkkets.com/public/css/style-m2-min.css --charset utf-8
+java -jar /usr/local/yuicompressor/build/yuicompressor-2.4.7.jar /Users/julienzmiro/Sites/tickkkets/tickkkets.comv2/public/css/style-m2.css -o /Users/julienzmiro/Sites/tickkkets/tickkkets.comv2/public/css/style-m2-min.css --charset utf-8
+*/
+
+body > section {
+	width: 90%;
+}
+body > footer {
+	width: 92%;
+}
+h2 {
+	font-size: 13px;
+}
+li div > footer a {
+	visibility: visible;
+}

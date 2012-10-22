@@ -1,0 +1,117 @@
+!!! 5
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		title Tickkkets : the place to find a dribbble invite
+		meta(name="description", content="Find dribbble invite")
+		meta(name="viewport", content="width=device-width")
+		link(rel="stylesheet", href="/css/style-min.css")
+		link(rel="stylesheet", media="all and (max-width: 990px)", href="/css/style-m-min.css")
+		link(rel="stylesheet", media="all and (max-width: 690px)", href="/css/style-m2-min.css")
+		script(src="/js/libs/modernizr-2.5.3.min.js")
+	body
+		header
+			h1
+				a(href="http://www.tickkkets.com", title="tickkkets.com, the place to find a dribbble invites")
+					img(src="/img/logo.png", alt="tickkkets.com")
+			h2
+				| Find a 
+				strong dribbble invite 
+				| from twitter !
+		
+		- if (displayList.length > 0)
+			section.display
+				ul
+					- for (var i in displayList)
+						- if (i == 0)
+							li.first
+								img(src=displayList[i].userImg, alt=displayList[i].userName)
+								div
+									header
+										h3
+											a(href=displayList[i].userUrl, title=displayList[i].userName)= "@" + displayList[i].userName
+										p= displayList[i].date.day + " " + displayList[i].date.monthString
+									p!= displayList[i].text
+									footer
+										a(href="/rm/" + displayList[i].id, title="Remove this tweet").adminLink Remove this tweet
+										a(href=displayList[i].url, title="View this tweet") View this tweet
+								br
+						- else if (i == displayList.length - 1)
+							li.last
+								img(src=displayList[i].userImg, alt=displayList[i].userName)
+								div
+									header
+										h3
+											a(href=displayList[i].userUrl, title=displayList[i].userName)= "@" + displayList[i].userName
+										p= displayList[i].date.day + " " + displayList[i].date.monthString
+									p!= displayList[i].text
+									footer
+										a(href="/rm/" + displayList[i].id, title="Remove this tweet").adminLink Remove this tweet
+										a(href=displayList[i].url, title="View this tweet") View this tweet
+								br
+						- else
+							li
+								img(src=displayList[i].userImg, alt=displayList[i].userName)
+								div
+									header
+										h3
+											a(href=displayList[i].userUrl, title=displayList[i].userName)= "@" + displayList[i].userName
+										p= displayList[i].date.day + " " + displayList[i].date.monthString
+									p!= displayList[i].text
+									footer
+										a(href="/rm/" + displayList[i].id, title="Remove this tweet").adminLink Remove this tweet
+										a(href=displayList[i].url, title="View this tweet") View this tweet
+								br
+
+		- if (pendingList.length > 0)
+			section.pending
+				ul
+					- for (var j in pendingList)
+						- if (j == 0)
+							li.first
+								img(src=pendingList[j].userImg, alt=pendingList[j].userName)
+								div
+									header
+										h3
+											a(href=pendingList[j].userUrl, title=pendingList[j].userName)= "@" + pendingList[j].userName
+										p= pendingList[j].date.day + " " + pendingList[j].date.monthString
+									p!= pendingList[j].text
+									footer
+										a(href="/ban/" + pendingList[j].id, title="Ban this tweet").adminLink Ban this
+										a(href="/add/" + pendingList[j].id, title="Add this tweet").adminLink Add this
+										a(href=pendingList[j].url, title="View this tweet") View this
+								br
+						- else if (j == pendingList.length - 1)
+							li.last
+								img(src=pendingList[j].userImg, alt=pendingList[j].userName)
+								div
+									header
+										h3
+											a(href=pendingList[j].userUrl, title=pendingList[j].userName)= "@" + pendingList[j].userName
+										p= pendingList[j].date.day + " " + pendingList[j].date.monthString
+									p!= pendingList[j].text
+									footer
+										a(href="/ban/" + pendingList[j].id, title="Ban this tweet").adminLink Ban this
+										a(href="/add/" + pendingList[j].id, title="Add this tweet").adminLink Add this
+										a(href=pendingList[j].url, title="View this tweet") View this
+								br
+						- else
+							li
+								img(src=pendingList[j].userImg, alt=pendingList[j].userName)
+								div
+									header
+										h3
+											a(href=pendingList[j].userUrl, title=pendingList[j].userName)= "@" + pendingList[j].userName
+										p= pendingList[j].date.day + " " + pendingList[j].date.monthString
+									p!= pendingList[j].text
+									footer
+										a(href="/ban/" + pendingList[j].id, title="Ban this tweet").adminLink Ban this
+										a(href="/add/" + pendingList[j].id, title="Add this tweet").adminLink Add this
+										a(href=pendingList[j].url, title="View this tweet") View this
+								br
+
+		footer
+			a(href="http://www.n3rdb1rd.com", title="Design and Development by Julien Zmiro") by Julien Zmiro
+		script(src="/js/libs/jquery-1.7.1.min.js")
+		script(src="/js/script-min.js")
